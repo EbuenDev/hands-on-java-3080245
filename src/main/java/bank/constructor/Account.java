@@ -1,4 +1,4 @@
-package bank;
+package bank.constructor;
 
 public class Account {
 
@@ -8,9 +8,9 @@ public class Account {
 
   public Account(int id, double balance, String accountType) {
     
-    setId(id);
-    setBalance(balance);
-    setAccountType(accountType);
+    this.id = id;
+    this.balance = balance;
+    this.accountType = accountType;
 
   }
 

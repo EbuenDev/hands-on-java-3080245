@@ -1,16 +1,19 @@
-package bank;
+package bank.constructor;
 
 public class Customer {
   private int id;
+  private String name;
   private String username;
   private String password;
   private int accountId;
 
-  public Customer(int id, String username, String password, int accountId) {
-    setId(id);
-    setUsername(username);
-    setPassword(password);
-    setAccountId(accountId);
+  public Customer(int id,String name, String username, String password, int accountId) {
+    
+    this.id = id;
+    this.name = name;
+    this.username = username;
+    this.password = password;
+    this.accountId = accountId;
     
   }
 
@@ -44,6 +47,14 @@ public class Customer {
 
     public void setAccountId(int accountId) {
         this.accountId = accountId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
   
