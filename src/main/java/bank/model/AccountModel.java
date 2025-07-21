@@ -11,9 +11,12 @@ import bank.database.Datasource;
 public class AccountModel extends Datasource {
 
   public static Account getAccount(int accountId) {
-      // make a object that will represent a specific account in the database.
-      String query = "SELECT * FROM accounts WHERE id = ?";  // Have a ? placeholder for the account ID to avoid SQL injection.
-      Account account;  // Initialize the account to null.
+      /*
+       * The query should use a parameterized statement to prevent SQL injection.
+       * Don't append raw userinput like String query = "SELECT * FROM accounts WHERE id = accountId"
+       */ 
+      String query = "SELECT * FROM accounts WHERE id = ?";
+      Account account;
       try (Connection connection = connect();
       PreparedStatement prepareStatement = connection.prepareStatement(query)) {  // Call the connect method to establish a connection to the database.
         prepareStatement.setInt(1, accountId);

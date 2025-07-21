@@ -16,8 +16,10 @@ public class CustomerModel extends Datasource {
     // This method should retrieve a customer from the database based on the username.
     String query = "SELECT * FROM customers WHERE name = ?";  // Have a ? placeholder for the username to avoid SQL injection.
     Customer customer = null;  // Initialize the customer to null.
-    // Make a structure try-catch resources to handle the database connection and query execution.
-    try (Connection connection = connect();
+    
+
+
+    try (Connection connection = connect(); // Thiss try-with-resources statement will automatically close the connection.
          PreparedStatement preparedStatement = connection.prepareStatement(query)) {  // Call the connect method to establish a connection to the database.
       // First parameter is the number of the placeholder, second is the value to set which is the username.
       preparedStatement.setString(1, name);  
