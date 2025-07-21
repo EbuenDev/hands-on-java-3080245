@@ -18,7 +18,6 @@ public class Datasource {
      try {
        // Attempt to establish a connection to the database.
        connection = DriverManager.getConnection(database_file);
-       System.out.println("Connection to the database established successfully.");
 
      }catch (SQLException e) {
        // If an exception occurs, print the stack trace for debugging.
