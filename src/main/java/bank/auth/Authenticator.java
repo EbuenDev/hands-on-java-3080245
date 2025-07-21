@@ -6,7 +6,7 @@ import bank.constructor.Customer;
 
 public class Authenticator {
   
-  public static void login(String username, String password) throws LoginException {
+  public static Customer login(String username, String password) throws LoginException {
     Customer customer = bank.model.CustomerModel.getCustomer(username);
 
     if (customer == null) {
@@ -19,6 +19,7 @@ public class Authenticator {
     }
 
     else throw new LoginException("Invalid password for user: " + customer.getUsername());
+    return customer;
 
   }
 
