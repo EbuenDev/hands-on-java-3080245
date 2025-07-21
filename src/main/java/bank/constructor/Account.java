@@ -3,14 +3,15 @@ package bank.constructor;
 public class Account {
 
   private int id;
+  private String type;
   private double balance;
-  private String accountType;
 
-  public Account(int id, double balance, String accountType) {
+
+  public Account(int id, String type,double balance) {
     
     this.id = id;
+    this.type = type;
     this.balance = balance;
-    this.accountType = accountType;
 
   }
 
@@ -31,10 +32,10 @@ public class Account {
     }
 
     public String getAccountType() {
-        return accountType;
+        return type;
     }
 
-    public void setAccountType(String accountType) {
-        this.accountType = accountType;
+    public void setAccountType(String type) {
+        this.type = type;
     }
 }
