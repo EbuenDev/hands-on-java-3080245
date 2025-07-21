@@ -1,11 +1,14 @@
 package bank;
 
+import bank.constructor.Customer;
+import static bank.model.CustomerModel.getCustomer;
+
 public class Main {
 
   public static void main (String [] args) {
-    // make a connection to the database
-    
-    Datasource.connect();   // Since the connect method is static, we can call it directly using the class name.
+  
+  Customer customer = getCustomer("Odelia Halbard");
+  System.out.println(customer.getUsername());
 
   }
 
