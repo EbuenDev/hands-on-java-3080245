@@ -5,9 +5,9 @@ public class Account {
   private int id;
   private String type;
   private double balance;
+  
 
-
-  public Account(int id, String type,double balance) {
+  public Account(int id, String type, double balance) {
     
     this.id = id;
     this.type = type;
@@ -31,11 +31,11 @@ public class Account {
         this.balance = balance;
     }
 
-    public String getAccountType() {
+    public String geType() {
         return type;
     }
 
-    public void setAccountType(String type) {
+    public void setType(String type) {
         this.type = type;
     }
 }
