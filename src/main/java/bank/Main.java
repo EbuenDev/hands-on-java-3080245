@@ -12,8 +12,8 @@ public class Main  {
   Customer customer = getCustomer("Odelia Halbard");
   System.out.println(customer.getUsername());
 
-  Account accountobj = getAccount(18780);
-  System.out.println(accountobj.getBalance());
+  Account account = getAccount(18780);
+  System.out.println("Account ID: " + account.getBalance());
 
   }
 
