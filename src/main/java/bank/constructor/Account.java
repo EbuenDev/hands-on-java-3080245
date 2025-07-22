@@ -1,5 +1,6 @@
 package bank.constructor;
 
+import bank.database.Datasource;
 import bank.execption.AmountException;
 
 public class Account {
@@ -50,11 +51,21 @@ public class Account {
         }else{
             double newBalance = this.balance + amount;
             setBalance(newBalance);
+            Datasource.updateAccountBalance(this.id, newBalance);  // Update the account balance in the database.
         }
 
     }
 
-    public void withdrawMoney(double amount) {
-    
+    public void withdrawMoney(double amount) throws AmountException {
+        if (amount < balance ) {
+            throw new AmountException("Insufficient funds for this withdrawal.");
+        }else if (amount > balance) {
+            throw new AmountException("The amount exceeds your current balance.");
+        }
+        else{
+            double newBalance = this.balance - amount;
+            setBalance(newBalance);
+            Datasource.updateAccountBalance(this.id, newBalance);  // Update the account balance in the database.
+        }
     }
 }

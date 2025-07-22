@@ -15,7 +15,7 @@ public class Menu {
   public static void displayMainMenu() {
 
     Menu menu = new Menu();  // Create an instance of the Menu class to access the non static methods.
-    menu.authenticateCustomer();
+    
 
     System.out.println("===================================");
     System.out.println("Welcome to the Bank Application!");
@@ -49,7 +49,7 @@ public class Menu {
     return customer;
   }
 
-  private void showMenu(Customer customerName, Account account) throws AmountException {
+  private void showMenu(Customer customerName, Account account) {
 
 
     int selection = 0;
@@ -76,7 +76,11 @@ public class Menu {
         case 2:
           System.out.print("Enter amount to deposit: $");
           amount = scanner.nextDouble();
-          account.depositMoney(amount);
+          try {
+            account.depositMoney(amount);
+          }catch (AmountException e) {
+            System.out.println(e.getMessage());
+          }
           break;
         case 3:
           System.out.print("Enter amount to withdraw: $");
